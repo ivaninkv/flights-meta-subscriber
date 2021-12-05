@@ -1,10 +1,10 @@
-package com.github.ivaninkv.mavenspringtemplate;
+package com.github.ivaninkv.fms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MavenSpringTemplateApplicationTests {
+class FlightsMetaSubscriberApplicationTests {
 
 	@Test
 	void contextLoads() {

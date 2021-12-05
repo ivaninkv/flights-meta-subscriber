@@ -10,7 +10,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  TARGET_FOLDER: /app/app-name
+  TARGET_FOLDER: /app/fms
 
 jobs:
   build:
@@ -74,4 +74,4 @@ jobs:
             echo DB_URL=${{ secrets.FIRST_VAR }} > ${{ env.TARGET_FOLDER }}/.env
             echo BOT_ADMINS=${{ secrets.SECOND_VAR }} >> ${{ env.TARGET_FOLDER }}/.env
             env $(cat ${{ env.TARGET_FOLDER }}/.env | grep ^[A-Z] | xargs) \
-                docker stack deploy -c ${{ env.TARGET_FOLDER }}/compose-deploy-prod.yml jtg-bot
+                docker stack deploy -c ${{ env.TARGET_FOLDER }}/compose-deploy-prod.yml fms

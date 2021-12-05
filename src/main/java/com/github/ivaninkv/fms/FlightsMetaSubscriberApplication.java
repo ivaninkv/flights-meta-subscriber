@@ -1,13 +1,13 @@
-package com.github.ivaninkv.mavenspringtemplate;
+package com.github.ivaninkv.fms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MavenSpringTemplateApplication {
+public class FlightsMetaSubscriberApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MavenSpringTemplateApplication.class, args);
+		SpringApplication.run(com.github.ivaninkv.fms.FlightsMetaSubscriberApplication.class, args);
 	}
 
 }
