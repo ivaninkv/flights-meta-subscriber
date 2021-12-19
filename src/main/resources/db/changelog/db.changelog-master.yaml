@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: FMS-1
+      author: Konstantin Ivanin
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/country.sql
