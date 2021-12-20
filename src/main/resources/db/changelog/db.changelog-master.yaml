@@ -6,4 +6,24 @@ databaseChangeLog:
         - sqlFile:
             dbms: postgresql
             relativeToChangelogFile: true
-            path: FMS-1/country.sql
+            path: FMS-1/01-country.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/02-city.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/03-airport.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/04-user.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/05-user-contact-type.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/06-user-contact.sql
