@@ -7,7 +7,7 @@ create table if not exists country
     name      varchar(50) not null,
     en_name   varchar(50),
     ru_name   varchar(50),
-    is_active boolean
+    is_active boolean     not null default true
 );
 
 create index if not exists country_en_name_index

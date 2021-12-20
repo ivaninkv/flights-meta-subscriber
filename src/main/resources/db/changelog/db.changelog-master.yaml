@@ -27,3 +27,15 @@ databaseChangeLog:
             dbms: postgresql
             relativeToChangelogFile: true
             path: FMS-1/06-user-contact.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/07-schedule-interval.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/08-subscribe.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/09-subscribe_details.sql

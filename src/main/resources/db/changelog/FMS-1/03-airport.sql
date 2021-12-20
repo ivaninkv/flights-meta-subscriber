@@ -9,7 +9,7 @@ create table if not exists airport
     name         varchar(50) not null,
     en_name      varchar(50),
     ru_name      varchar(50),
-    is_active    boolean,
+    is_active    boolean     not null default true,
     constraint airport_pk
         primary key (country_code, city_code, code),
     constraint airport_city_country_code_code_fk

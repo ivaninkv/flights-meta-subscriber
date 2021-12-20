@@ -8,7 +8,7 @@ create table if not exists city
     name         varchar(50) not null,
     en_name      varchar(50),
     ru_name      varchar(50),
-    is_active    boolean,
+    is_active    boolean     not null default true,
     constraint city_pk
         primary key (country_code, code)
 );
