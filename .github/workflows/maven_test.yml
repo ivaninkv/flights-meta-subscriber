@@ -27,8 +27,8 @@ jobs:
       postgres:
         image: postgres:13.4-alpine
         env:
-          POSTGRES_USER: ${{ secrets.DB_URL }}
-          POSTGRES_PASSWORD: ${{ secrets.DB_USER }}
+          POSTGRES_USER: ${{ secrets.DB_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASS }}
           POSTGRES_DB: fms_db
         options: >-
           --health-cmd pg_isready
