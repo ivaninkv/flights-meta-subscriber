@@ -5,5 +5,5 @@ COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java", \
             "-Dspring.datasource.url=${DB_URL}", \
             "-Dspring.datasource.username=${DB_USER}", \
-            "-Dspring.datasource.password=${DB_PASS}",
+            "-Dspring.datasource.password=${DB_PASS}", \
             "-jar", "app.jar"]
