@@ -11,11 +11,11 @@ create table if not exists subscribe
         constraint subscribe_schedule_interval_id_fk
             references schedule_interval
             on update cascade on delete set null,
-    name                 varchar(50)         not null,
+    name                 varchar(50) not null,
     date_from            date,
     date_to              date,
-    delta_amount         integer default 100 not null,
+    delta_amount         integer     not null default 100,
     from_location        json,
     to_location          json,
-    is_active            boolean default true
+    is_active            boolean     not null default true
 );

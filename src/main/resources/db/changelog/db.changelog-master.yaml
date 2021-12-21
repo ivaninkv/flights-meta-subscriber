@@ -38,4 +38,8 @@ databaseChangeLog:
         - sqlFile:
             dbms: postgresql
             relativeToChangelogFile: true
-            path: FMS-1/09-subscribe_details.sql
+            path: FMS-1/09-subscribe-details.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/10-subscribe-result.sql

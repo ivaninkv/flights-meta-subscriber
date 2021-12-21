@@ -23,6 +23,21 @@ jobs:
       contents: read
       packages: write
 
+    services:
+      postgres:
+        image: postgres:13.4-alpine
+        env:
+          POSTGRES_USER: ${{ secrets.DB_URL }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_USER }}
+          POSTGRES_DB: fms_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
     steps:
       - uses: actions/checkout@v2
 
@@ -74,7 +89,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo DB_URL=${{ secrets.FIRST_VAR }} > ${{ env.TARGET_FOLDER }}/.env
-            echo BOT_ADMINS=${{ secrets.SECOND_VAR }} >> ${{ env.TARGET_FOLDER }}/.env
+            echo DB_URL=${{ secrets.DB_URL }} > ${{ env.TARGET_FOLDER }}/.env
+            echo DB_USER=${{ secrets.DB_USER }} >> ${{ env.TARGET_FOLDER }}/.env
+            echo DB_PASS=${{ secrets.DB_PASS }} >> ${{ env.TARGET_FOLDER }}/.env
             env $(cat ${{ env.TARGET_FOLDER }}/.env | grep ^[A-Z] | xargs) \
                 docker stack deploy -c ${{ env.TARGET_FOLDER }}/compose-deploy-test.yml fms-test
