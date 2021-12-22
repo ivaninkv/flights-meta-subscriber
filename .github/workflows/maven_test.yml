@@ -79,7 +79,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: compose-deploy-test.yml
+          source: compose-deploy.yml
           target: ${{ env.TARGET_FOLDER }}
 
       - name: Generate .env file and deploy docker stack
@@ -94,4 +94,4 @@ jobs:
             echo DB_PASS=${{ secrets.DB_PASS }} >> ${{ env.TARGET_FOLDER }}/.env
             echo FULL_IMAGE_NAME=${{ steps.meta.outputs.tags }} >> ${{ env.TARGET_FOLDER }}/.env
             env $(cat ${{ env.TARGET_FOLDER }}/.env | grep ^[A-Z] | xargs) \
-                docker stack deploy -c ${{ env.TARGET_FOLDER }}/compose-deploy-test.yml fms-test
+                docker stack deploy -c ${{ env.TARGET_FOLDER }}/compose-deploy.yml fms-test
