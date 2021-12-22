@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: FMS-1
+      author: Konstantin Ivanin
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/01-country.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/02-city.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/03-airport.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/04-user.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/05-user-contact-type.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/06-user-contact.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/07-schedule-interval.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/08-subscribe.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/09-subscribe-details.sql
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-1/10-subscribe-result.sql
