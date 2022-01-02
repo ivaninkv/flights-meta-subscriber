@@ -15,11 +15,11 @@ public class Country {
     @Column(length = 3)
     private String code;
 
-    @Column(length = 3)
-    private String currency;
-
     @Column(length = 50, nullable = false)
     private String name;
+
+    @Column(length = 3)
+    private String currency;
 
     @Column(name = "en_name", length = 50)
     private String enName;
