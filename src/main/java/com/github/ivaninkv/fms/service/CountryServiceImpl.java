@@ -4,13 +4,15 @@ import com.github.ivaninkv.fms.dto.CountryDTO;
 import kong.unirest.GenericType;
 import kong.unirest.Unirest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CountryServiceImpl implements CountryService {
-    private String countryURL = "https://api.travelpayouts.com/data/en/countries.json";
+    @Value("${dictionary.countryURL}")
+    private String countryURL;
 
     @Autowired
     public CountryServiceImpl() {

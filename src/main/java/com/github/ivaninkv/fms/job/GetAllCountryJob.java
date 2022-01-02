@@ -5,6 +5,7 @@ import com.github.ivaninkv.fms.dto.CountryDTO;
 import com.github.ivaninkv.fms.repository.CountryRepository;
 import com.github.ivaninkv.fms.repository.entity.Country;
 import com.github.ivaninkv.fms.service.CountryService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Component
 public class GetAllCountryJob {
     private CountryService countryService;
@@ -25,13 +27,16 @@ public class GetAllCountryJob {
         this.countryRepository = countryRepository;
     }
 
-    @Scheduled(fixedRateString = "60000")
+    @Scheduled(fixedRateString = "${dictionary.fixedRateString}")
     public void getAllCountry() {
+        log.info("Method getAllCountry started");
         List<CountryDTO> countriesDTO = countryService.getAllCountries();
+        log.info(String.format("Getting %d records from API", countriesDTO.size()));
         List<Country> countriesEntity = countriesDTO.stream()
                 .peek(CountryDTO::fillNames)
-                .map(countryConvertor::convertToEntity)
+                .map(countryConvertor::toEntity)
                 .collect(Collectors.toList());
-        countryRepository.saveAll(countriesEntity);
+        log.info(String.format("Saved %d records to DB", countryRepository.saveAll(countriesEntity).size()));
+        log.info("Method getAllCountry finished");
     }
 }

@@ -18,7 +18,11 @@ public class CountryConvertor {
                 .setMatchingStrategy(MatchingStrategies.STANDARD);
     }
 
-    public Country convertToEntity(CountryDTO countryDTO) {
+    public Country toEntity(CountryDTO countryDTO) {
         return modelMapper.map(countryDTO, Country.class);
+    }
+
+    public CountryDTO toDto(Country country) {
+        return modelMapper.map(country, CountryDTO.class);
     }
 }
