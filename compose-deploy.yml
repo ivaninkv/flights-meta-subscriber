@@ -6,6 +6,8 @@ services:
       - DB_URL=${DB_URL}
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASS}
+      - DICT_FIXED_RATE=${DICT_FIXED_RATE}
+      - DICT_COUNTRY_URL=${DICT_COUNTRY_URL}
     depends_on:
       - db
 
