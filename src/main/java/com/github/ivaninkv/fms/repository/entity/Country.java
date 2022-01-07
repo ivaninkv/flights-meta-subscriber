@@ -12,13 +12,13 @@ import javax.persistence.Table;
 @Table(name = "country")
 public class Country {
     @Id
-    @Column(length = 3)
+    @Column(name = "code", length = 3)
     private String code;
 
-    @Column(length = 50, nullable = false)
+    @Column(name = "name", length = 50, nullable = false)
     private String name;
 
-    @Column(length = 3)
+    @Column(name = "currency", length = 3)
     private String currency;
 
     @Column(name = "en_name", length = 50)

@@ -13,8 +13,16 @@ class CountryServiceTest {
     private final int expectedCountryCount = 251;
 
     @Test
+    void shouldCitiesNotEmpty() {
+        List<CountryDTO> countries = countryService.getAllCountries();
+        Assertions.assertNotNull(countries);
+        Assertions.assertFalse(countries.isEmpty());
+    }
+
+    @Test
     void shouldProperlyCountryCount() {
         List<CountryDTO> countries = countryService.getAllCountries();
+        Assertions.assertNotNull(countries);
         Assertions.assertEquals(expectedCountryCount, countries.size());
     }
 }
