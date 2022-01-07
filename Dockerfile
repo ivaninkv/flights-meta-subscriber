@@ -8,4 +8,5 @@ ENTRYPOINT ["java", \
             "-Dspring.datasource.password=${DB_PASS}", \
             "-Ddictionary.fixedRateString=${DICT_FIXED_RATE}", \
             "-Ddictionary.countryURL=${DICT_COUNTRY_URL}", \
+            "-Ddictionary.cityURL=${DICT_CITY_URL}", \
             "-jar", "app.jar"]

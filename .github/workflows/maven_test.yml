@@ -94,6 +94,7 @@ jobs:
             echo DB_PASS=${{ secrets.DB_PASS }} >> ${{ env.TARGET_FOLDER }}/.env
             echo DICT_FIXED_RATE=${{ secrets.DICT_FIXED_RATE }} >> ${{ env.TARGET_FOLDER }}/.env
             echo DICT_COUNTRY_URL=${{ secrets.DICT_COUNTRY_URL }} >> ${{ env.TARGET_FOLDER }}/.env
+            echo DICT_CITY_URL=${{ secrets.DICT_CITY_URL }} >> ${{ env.TARGET_FOLDER }}/.env
             echo FULL_IMAGE_NAME=${{ steps.meta.outputs.tags }} >> ${{ env.TARGET_FOLDER }}/.env
             env $(cat ${{ env.TARGET_FOLDER }}/.env | grep ^[A-Z] | xargs) \
                 docker stack deploy -c ${{ env.TARGET_FOLDER }}/compose-deploy.yml fms-test
