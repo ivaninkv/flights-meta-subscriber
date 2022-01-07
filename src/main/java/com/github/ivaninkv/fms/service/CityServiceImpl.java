@@ -11,11 +11,11 @@ import java.util.List;
 
 @Service
 public class CityServiceImpl implements CityService {
-    @Value("${dictionary.cityURL}")
-    private String cityURL;
+    private final String cityURL;
 
     @Autowired
-    public CityServiceImpl() {
+    public CityServiceImpl(@Value("${dictionary.cityURL}") String cityURL) {
+        this.cityURL = cityURL;
     }
 
     @Override

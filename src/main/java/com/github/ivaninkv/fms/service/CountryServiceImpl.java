@@ -11,11 +11,11 @@ import java.util.List;
 
 @Service
 public class CountryServiceImpl implements CountryService {
-    @Value("${dictionary.countryURL}")
-    private String countryURL;
+    private final String countryURL;
 
     @Autowired
-    public CountryServiceImpl() {
+    public CountryServiceImpl(@Value("${dictionary.countryURL}") String countryURL) {
+        this.countryURL = countryURL;
     }
 
     @Override
