@@ -9,4 +9,5 @@ ENTRYPOINT ["java", \
             "-Ddictionary.fixedRateString=${DICT_FIXED_RATE}", \
             "-Ddictionary.countryURL=${DICT_COUNTRY_URL}", \
             "-Ddictionary.cityURL=${DICT_CITY_URL}", \
+            "-Ddictionary.airportURL=${DICT_AIRPORT_URL}", \
             "-jar", "app.jar"]
