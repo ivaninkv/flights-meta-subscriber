@@ -43,3 +43,11 @@ databaseChangeLog:
             dbms: postgresql
             relativeToChangelogFile: true
             path: FMS-1/10-subscribe-result.sql
+  - changeSet:
+      id: FMS-4
+      author: Konstantin Ivanin
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            relativeToChangelogFile: true
+            path: FMS-4/01-airport-extend-text-columns.sql
