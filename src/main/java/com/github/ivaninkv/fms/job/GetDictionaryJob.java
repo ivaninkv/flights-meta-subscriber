@@ -11,6 +11,7 @@ import com.github.ivaninkv.fms.repository.CityRepository;
 import com.github.ivaninkv.fms.repository.CountryRepository;
 import com.github.ivaninkv.fms.repository.entity.Airport;
 import com.github.ivaninkv.fms.repository.entity.City;
+import com.github.ivaninkv.fms.repository.entity.CityCode;
 import com.github.ivaninkv.fms.repository.entity.Country;
 import com.github.ivaninkv.fms.service.AirportService;
 import com.github.ivaninkv.fms.service.CityService;
@@ -87,8 +88,9 @@ public class GetDictionaryJob {
         log.info("Method getAllAirport started");
         List<AirportDTO> airportsDTO = airportService.getAllAirports();
         log.info(String.format("Getting %d airport from API", airportsDTO.size()));
-        List<String> cities = cityRepository.findAllByIsActiveTrue().stream()
-                .map(City::getCode)
+        List<String> cities = cityRepository.findAllByIsActive(true)
+                .stream()
+                .map(CityCode::getCode)
                 .collect(Collectors.toList());
         List<Airport> airportEntity = airportsDTO.stream()
                 .peek(AirportDTO::fillNames)
