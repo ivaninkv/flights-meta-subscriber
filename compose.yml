@@ -11,6 +11,7 @@ services:
       - DICT_FIXED_RATE=${DICT_FIXED_RATE}
       - DICT_COUNTRY_URL=${DICT_COUNTRY_URL}
       - DICT_CITY_URL=${DICT_CITY_URL}
+      - DICT_AIRPORT_URL=${DICT_AIRPORT_URL}
     depends_on:
       - db
 
