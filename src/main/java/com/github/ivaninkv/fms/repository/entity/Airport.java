@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "airport")
+@Table(name = "airport", schema = "public")
 public class Airport {
     @Id
     @Column(length = 3)

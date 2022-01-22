@@ -10,7 +10,7 @@ import java.util.List;
 @DisplayName("Unit-test for getting airports from API")
 class AirportServiceImplTest {
     private final AirportService airportService = new AirportServiceImpl("https://api.travelpayouts.com/data/en/airports.json");
-    private final int expectedAirportCount = 10093;
+    private final int minExpectedAirportCount = 1000;
 
     @Test
     void shouldAirportsNotEmpty() {
@@ -23,6 +23,6 @@ class AirportServiceImplTest {
     void shouldProperlyAirportCount() {
         List<AirportDTO> airports = airportService.getAllAirports();
         Assertions.assertNotNull(airports);
-        Assertions.assertEquals(expectedAirportCount, airports.size());
+        Assertions.assertTrue(airports.size() > minExpectedAirportCount);
     }
 }
