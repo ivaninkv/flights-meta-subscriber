@@ -9,23 +9,14 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "country", schema = "public")
-public class Country {
+@Table(name = "user", schema = "public")
+public class User {
     @Id
-    @Column(name = "code", length = 3)
-    private String code;
+    @Column(name = "id")
+    private int id;
 
     @Column(name = "name", length = 50, nullable = false)
     private String name;
-
-    @Column(name = "currency", length = 3)
-    private String currency;
-
-    @Column(name = "en_name", length = 50)
-    private String enName;
-
-    @Column(name = "ru_name", length = 50)
-    private String ruName;
 
     @Column(name = "is_active", nullable = false)
     private boolean isActive;

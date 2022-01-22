@@ -10,7 +10,7 @@ import java.util.List;
 @DisplayName("Unit-test for getting cities from API")
 class CityServiceImplTest {
     private final CityService cityService = new CityServiceImpl("https://api.travelpayouts.com/data/en/cities.json");
-    private final int expectedCityCount = 8890;
+    private final int minExpectedCityCount = 9000;
 
     @Test
     void shouldCitiesNotEmpty() {
@@ -23,6 +23,6 @@ class CityServiceImplTest {
     void shouldProperlyCityCount() {
         List<CityDTO> cities = cityService.getAllCities();
         Assertions.assertNotNull(cities);
-        Assertions.assertEquals(expectedCityCount, cities.size());
+        Assertions.assertTrue(cities.size() > minExpectedCityCount);
     }
 }
