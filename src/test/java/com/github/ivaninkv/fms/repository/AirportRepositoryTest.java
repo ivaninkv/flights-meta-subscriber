@@ -27,6 +27,7 @@ class AirportRepositoryTest {
     @Test
     public void shouldProperlyActiveAirportCount() {
         List<Airport> airports = airportRepository.findAllByIsActiveTrue();
+        Assertions.assertNotNull(airports);
         Assertions.assertEquals(5, airports.size());
     }
 
@@ -37,6 +38,7 @@ class AirportRepositoryTest {
     @Test
     public void shouldProperlyInActiveAirportCount() {
         List<Airport> airports = airportRepository.findAllByIsActiveFalse();
+        Assertions.assertNotNull(airports);
         Assertions.assertEquals(1, airports.size());
     }
 }

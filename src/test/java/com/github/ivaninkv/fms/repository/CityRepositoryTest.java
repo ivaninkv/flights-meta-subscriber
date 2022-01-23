@@ -24,6 +24,7 @@ class CityRepositoryTest {
     @Test
     public void shouldProperlyActiveCityCount() {
         List<City> cities = cityRepository.findAllByIsActiveTrue();
+        Assertions.assertNotNull(cities);
         Assertions.assertEquals(5, cities.size());
     }
 
@@ -31,6 +32,7 @@ class CityRepositoryTest {
     @Test
     public void shouldProperlyInActiveCityCount() {
         List<City> cities = cityRepository.findAllByIsActiveFalse();
+        Assertions.assertNotNull(cities);
         Assertions.assertEquals(1, cities.size());
     }
 }
