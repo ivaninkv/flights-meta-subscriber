@@ -24,6 +24,7 @@ class UserRepositoryTest {
     @Test
     public void shouldProperlyActiveUserCount() {
         List<User> users = userRepository.findAllByIsActiveTrue();
+        Assertions.assertNotNull(users);
         Assertions.assertEquals(5, users.size());
     }
 
@@ -31,6 +32,7 @@ class UserRepositoryTest {
     @Test
     public void shouldProperlyInActiveUserCount() {
         List<User> users = userRepository.findAllByIsActiveFalse();
+        Assertions.assertNotNull(users);
         Assertions.assertEquals(1, users.size());
     }
 }

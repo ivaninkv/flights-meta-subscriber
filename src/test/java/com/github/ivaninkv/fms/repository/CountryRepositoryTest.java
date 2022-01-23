@@ -24,6 +24,7 @@ class CountryRepositoryTest {
     @Test
     public void shouldProperlyActiveCountryCount() {
         List<Country> countries = countryRepository.findAllByIsActiveTrue();
+        Assertions.assertNotNull(countries);
         Assertions.assertEquals(5, countries.size());
     }
 
@@ -31,6 +32,7 @@ class CountryRepositoryTest {
     @Test
     public void shouldProperlyInActiveCountryCount() {
         List<Country> countries = countryRepository.findAllByIsActiveFalse();
+        Assertions.assertNotNull(countries);
         Assertions.assertEquals(1, countries.size());
     }
 }
