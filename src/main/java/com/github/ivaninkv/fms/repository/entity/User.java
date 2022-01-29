@@ -3,6 +3,7 @@ package com.github.ivaninkv.fms.repository.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,4 +19,7 @@ public class User {
 
     @Column(name = "is_active", nullable = false)
     private boolean isActive = true;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserContact> userContact;
 }
