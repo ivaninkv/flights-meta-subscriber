@@ -2,10 +2,7 @@ package com.github.ivaninkv.fms.repository.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -15,11 +12,11 @@ public class Airport {
     @Column(length = 3)
     private String code;
 
-    @Column(length = 3, nullable = false)
-    private String country_code;
+    @ManyToOne
+    private Country country;
 
-    @Column(length = 3, nullable = false)
-    private String city_code;
+    @ManyToOne
+    private City city;
 
     @Column(length = 50, nullable = false)
     private String name;
