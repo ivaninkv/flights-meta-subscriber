@@ -22,6 +22,8 @@ class AirportRepositoryTest {
 
     @Sql(scripts = {"/sql/ClearAirport.sql",
             "/sql/ClearCity.sql",
+            "/sql/ClearCountry.sql",
+            "/sql/InsertCountry.sql",
             "/sql/InsertCity.sql",
             "/sql/InsertAirport.sql"})
     @Test
@@ -33,6 +35,8 @@ class AirportRepositoryTest {
 
     @Sql(scripts = {"/sql/ClearAirport.sql",
             "/sql/ClearCity.sql",
+            "/sql/ClearCountry.sql",
+            "/sql/InsertCountry.sql",
             "/sql/InsertCity.sql",
             "/sql/InsertAirport.sql"})
     @Test

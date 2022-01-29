@@ -20,7 +20,10 @@ class CityRepositoryTest {
     @Autowired
     private CityRepository cityRepository;
 
-    @Sql(scripts = {"/sql/ClearCity.sql", "/sql/InsertCity.sql"})
+    @Sql(scripts = {"/sql/ClearCity.sql",
+            "/sql/ClearCountry.sql",
+            "/sql/InsertCountry.sql",
+            "/sql/InsertCity.sql"})
     @Test
     public void shouldProperlyActiveCityCount() {
         List<City> cities = cityRepository.findAllByIsActiveTrue();
@@ -28,7 +31,10 @@ class CityRepositoryTest {
         Assertions.assertEquals(5, cities.size());
     }
 
-    @Sql(scripts = {"/sql/ClearCity.sql", "/sql/InsertCity.sql"})
+    @Sql(scripts = {"/sql/ClearCity.sql",
+            "/sql/ClearCountry.sql",
+            "/sql/InsertCountry.sql",
+            "/sql/InsertCity.sql"})
     @Test
     public void shouldProperlyInActiveCityCount() {
         List<City> cities = cityRepository.findAllByIsActiveFalse();
